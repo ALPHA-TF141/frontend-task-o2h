@@ -335,34 +335,3 @@ window.addEventListener('scroll', () => {
     // Optimization tasks can go here
   }, 100);
 }, { passive: true });
-
-  errors.innerHTML = '';
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-  if (!name || !email || !message) {
-    errors.textContent = 'All fields are required.';
-    return;
-  }
-  const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
-  if (!emailRegex.test(email)) {
-    errors.textContent = 'Invalid email format.';
-    return;
-  }
-  alert('Form submitted successfully!');
-});
-
-// Bonus: Fetch Blog Posts
-async function fetchPosts() {
-  const postsDiv = document.getElementById('posts');
-  postsDiv.innerHTML = 'Loading...';
-  try {
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=6');
-    if (!res.ok) throw new Error('Failed to fetch');
-    const posts = await res.json();
-    postsDiv.innerHTML = posts.map(p => `<div class="post"><h3>${p.title}</h3><p>${p.body}</p></div>`).join('');
-  } catch (err) {
-    postsDiv.innerHTML = 'Error loading posts.';
-  }
-}
-fetchPosts();
