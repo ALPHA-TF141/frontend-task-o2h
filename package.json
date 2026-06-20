@@ -1,0 +1,16 @@
+{
+  "name": "frontend-task-o2h",
+  "version": "1.0.0",
+  "description": "A responsive SaaS landing page built as part of the **O2H Mock Front-End Developer Assessment**.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "sass": "^1.101.0"
+  }
+}
